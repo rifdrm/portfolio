@@ -5,3 +5,4 @@ exclude:
   - anti-slop
   - .opencode
   - AGENTS.md
+  - ppt

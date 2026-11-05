@@ -966,6 +966,7 @@ ol {
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 8px;
   margin-bottom: var(--sp-4);
   font-family: var(--font-mono);
@@ -1066,6 +1067,7 @@ ol {
 .project-cover img,
 .project-cover video {
   width: 100%;
+  height: auto;
   max-height: 78vh;
   object-fit: contain;
   margin-inline: auto;
@@ -1252,6 +1254,7 @@ ol {
 
 .lightbox img {
   width: 100%;
+  height: auto;
   max-height: 86vh;
   object-fit: contain;
 }
@@ -1410,6 +1413,7 @@ ol {
   .site-nav a {
     display: inline-flex;
     align-items: center;
+    min-width: 44px;
     min-height: 44px;
   }
 
@@ -1435,6 +1439,14 @@ ol {
   .skip-link {
     min-height: 44px;
   }
+
+  .breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
 }
 
 /* ---------- No JavaScript fallback ---------- */
@@ -1448,7 +1460,12 @@ html:not(.js) #theme-toggle {
 }
 
 @media (max-width: 900px) {
+  html:not(.js) {
+    scroll-padding-top: 16px;
+  }
+
   html:not(.js) .site-header {
+    position: static;
     flex-wrap: wrap;
     min-height: 0;
     padding-block: 8px;
@@ -1457,6 +1474,7 @@ html:not(.js) #theme-toggle {
   html:not(.js) .site-panel {
     position: static;
     display: flex;
+    flex: 0 0 100%;
     flex-wrap: wrap;
     width: 100%;
     gap: 12px;
@@ -1473,7 +1491,7 @@ html:not(.js) #theme-toggle {
     flex-direction: row;
     flex-wrap: wrap;
     width: auto;
-    gap: 12px 20px;
+    gap: 12px;
   }
 
   html:not(.js) .site-nav a {
@@ -1625,6 +1643,19 @@ html:not(.js) #theme-toggle {
 }
 
 @media (max-width: 640px) {
+  .project-hero .wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-hero .project-cover {
+    order: 1;
+  }
+
+  .project-hero .project-facts {
+    order: 2;
+  }
+
   .project-grid,
   .gallery-grid,
   .project-nav {
