@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Touch-Sensor Museum Security Alarm | Arif Darmawan</title>
   <meta name="description" content="A low-cost museum security alarm built with a TTP223 touch sensor, 555 timer, and 74LS73 flip-flop.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f4f4f0">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Touch-Sensor Museum Security Alarm | Arif Darmawan">
   <meta property="og:description" content="A low-cost museum security alarm built with a TTP223 touch sensor, 555 timer, and 74LS73 flip-flop.">
@@ -20,6 +20,8 @@
           theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         }
         document.documentElement.setAttribute("data-theme", theme);
+        var themeMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeMeta) themeMeta.setAttribute("content", theme === "dark" ? "#121212" : "#f4f4f0");
         document.documentElement.lang = localStorage.getItem("lang") || "en";
         document.documentElement.classList.add("js");
       } catch (error) {

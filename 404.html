@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page not found | Arif Darmawan</title>
   <meta name="description" content="The page you are looking for does not exist or has been moved.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f4f4f0">
   <meta name="robots" content="noindex">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -17,6 +17,8 @@
           theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         }
         document.documentElement.setAttribute("data-theme", theme);
+        var themeMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeMeta) themeMeta.setAttribute("content", theme === "dark" ? "#121212" : "#f4f4f0");
         document.documentElement.lang = localStorage.getItem("lang") || "en";
         document.documentElement.classList.add("js");
       } catch (error) {

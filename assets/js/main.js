@@ -125,7 +125,7 @@
     } catch (error) {}
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute("content", theme === "dark" ? "#000000" : "#ffffff");
+      meta.setAttribute("content", theme === "dark" ? "#121212" : "#f4f4f0");
     }
     updateControls();
   }

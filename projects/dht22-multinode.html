@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>4-Node Temperature & Humidity Monitoring | Arif Darmawan</title>
   <meta name="description" content="Four DHT22 nodes stream temperature and humidity data to an Arduino Mega for display on an OLED.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f4f4f0">
   <meta property="og:type" content="article">
   <meta property="og:title" content="4-Node Temperature & Humidity Monitoring | Arif Darmawan">
   <meta property="og:description" content="Four DHT22 nodes stream temperature and humidity data to an Arduino Mega for display on an OLED.">
@@ -20,6 +20,8 @@
           theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         }
         document.documentElement.setAttribute("data-theme", theme);
+        var themeMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeMeta) themeMeta.setAttribute("content", theme === "dark" ? "#121212" : "#f4f4f0");
         document.documentElement.lang = localStorage.getItem("lang") || "en";
         document.documentElement.classList.add("js");
       } catch (error) {

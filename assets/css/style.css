@@ -31,18 +31,19 @@
 }
 
 :root {
-  --bg: #ffffff;
-  --fg: #000000;
-  --muted: #3d3d3d;
-  --line: #000000;
+  --bg: #f4f4f0;
+  --fg: #141414;
+  --muted: #525252;
+  --line: #141414;
+  --line-soft: #cccccc;
   --surface: #ffffff;
-  --surface-2: #f0f0f0;
-  --invert-bg: #000000;
-  --invert-fg: #ffffff;
-  --link: #0000ff;
-  --success: #008000;
+  --surface-2: #e9e9e2;
+  --invert-bg: #141414;
+  --invert-fg: #f4f4f0;
+  --link: #0033cc;
+  --success: #006b2d;
   --warning: #8a4b00;
-  --error: #ff0000;
+  --error: #b00020;
 
   --font-display: "Archivo Black", "Arial Black", Impact, sans-serif;
   --font-body: "Work Sans", Arial, sans-serif;
@@ -63,16 +64,19 @@
 }
 
 [data-theme="dark"] {
-  --bg: #000000;
-  --fg: #ffffff;
-  --muted: #bdbdbd;
-  --line: #ffffff;
-  --surface: #000000;
-  --surface-2: #161616;
-  --invert-bg: #000000;
-  --invert-fg: #ffffff;
-  --link: #9aa7ff;
+  --bg: #121212;
+  --fg: #ededed;
+  --muted: #a3a3a3;
+  --line: #e2e2e2;
+  --line-soft: #333333;
+  --surface: #1c1c1c;
+  --surface-2: #242424;
+  --invert-bg: #1c1c1c;
+  --invert-fg: #ededed;
+  --link: #8ea7ff;
+  --success: #6ee7a0;
   --warning: #ffa500;
+  --error: #ff8a8a;
 }
 
 *,
@@ -183,6 +187,9 @@ ol {
   --fg: var(--invert-fg);
   --bg: var(--invert-bg);
   --line: var(--invert-fg);
+  --line-soft: #3a3a3a;
+  --muted: #a3a3a3;
+  --link: #8ea7ff;
   background: var(--invert-bg);
   color: var(--invert-fg);
 }
@@ -620,18 +627,9 @@ ol {
 
 .project-card:hover,
 .project-card:focus-visible {
-  --fg: var(--invert-fg);
-  --bg: var(--invert-bg);
-  --line: var(--invert-fg);
-  background: var(--invert-bg);
-  color: var(--invert-fg);
-}
-
-[data-theme="dark"] .project-card:hover,
-[data-theme="dark"] .project-card:focus-visible {
-  background: #ffffff;
-  color: #000000;
-  --line: #000000;
+  --line: var(--bg);
+  background: var(--fg);
+  color: var(--bg);
 }
 
 .card-media {
@@ -849,11 +847,11 @@ ol {
   gap: var(--sp-3);
   align-items: baseline;
   padding-block: 16px;
-  border-top: 2px solid var(--line);
+  border-top: 2px solid var(--line-soft);
 }
 
 .contact-row:last-child {
-  border-bottom: 2px solid var(--line);
+  border-bottom: 2px solid var(--line-soft);
 }
 
 .contact-row dt {
@@ -918,7 +916,7 @@ ol {
   gap: 8px 24px;
   margin-top: 28px;
   padding-top: 16px;
-  border-top: 2px solid var(--line);
+  border-top: 2px solid var(--line-soft);
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.08em;
@@ -1024,7 +1022,7 @@ ol {
 
 .fact {
   padding: 16px 16px 16px 0;
-  border-right: 2px solid var(--line);
+  border-right: 2px solid var(--line-soft);
 }
 
 .fact:last-child {
@@ -1112,12 +1110,12 @@ ol {
 
 .content-main li {
   padding: 10px 0;
-  border-top: 2px solid var(--line);
+  border-top: 2px solid var(--line-soft);
   font-size: clamp(15px, 1.4vw, 17px);
 }
 
 .content-main li:last-child {
-  border-bottom: 2px solid var(--line);
+  border-bottom: 2px solid var(--line-soft);
 }
 
 .content-main li::before {
@@ -1167,12 +1165,12 @@ ol {
 .gallery-item video {
   width: 100%;
   height: auto;
-  background: #000;
+  background: var(--invert-bg);
 }
 
 .gallery-item figcaption {
   padding: 12px 14px;
-  border-top: 2px solid var(--line);
+  border-top: 2px solid var(--line-soft);
   font-family: var(--font-mono);
   font-size: 11px;
   line-height: 1.5;
@@ -1251,13 +1249,13 @@ ol {
   max-width: none;
   max-height: none;
   padding: 0;
-  border: 3px solid #ffffff;
-  background: #000000;
-  color: #ffffff;
+  border: 3px solid var(--invert-fg);
+  background: var(--invert-bg);
+  color: var(--invert-fg);
 }
 
 .lightbox::backdrop {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(20, 20, 20, 0.82);
 }
 
 .lightbox img {
@@ -1274,7 +1272,7 @@ ol {
   justify-content: space-between;
   gap: 12px;
   padding: 10px 12px;
-  border-top: 2px solid #ffffff;
+  border-top: 2px solid var(--invert-fg);
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.04em;
@@ -1296,9 +1294,9 @@ ol {
   width: 44px;
   height: 44px;
   padding: 0;
-  border: 2px solid #ffffff;
-  background: #000000;
-  color: #ffffff;
+  border: 2px solid var(--invert-fg);
+  background: var(--invert-bg);
+  color: var(--invert-fg);
   font-family: var(--font-mono);
   font-size: 16px;
   line-height: 1;
@@ -1306,8 +1304,8 @@ ol {
 }
 
 .lightbox-nav:hover {
-  background: #ffffff;
-  color: #000000;
+  background: var(--invert-fg);
+  color: var(--invert-bg);
 }
 
 .lightbox-counter {
@@ -1327,9 +1325,9 @@ ol {
 .lightbox-close {
   min-height: 44px;
   padding: 10px 14px;
-  border: 2px solid #ffffff;
-  background: #000000;
-  color: #ffffff;
+  border: 2px solid var(--invert-fg);
+  background: var(--invert-bg);
+  color: var(--invert-fg);
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 700;
@@ -1339,8 +1337,8 @@ ol {
 }
 
 .lightbox-close:hover {
-  background: #ffffff;
-  color: #000000;
+  background: var(--invert-fg);
+  color: var(--invert-bg);
 }
 
 /* ---------- WIP dialog ---------- */
@@ -1356,7 +1354,7 @@ ol {
 }
 
 .wip-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.78);
+  background: rgba(20, 20, 20, 0.82);
 }
 
 .wip-dialog__bar {
@@ -1730,7 +1728,7 @@ html:not(.js) #theme-toggle {
   }
 
   .fact:nth-child(n + 3) {
-    border-top: 2px solid var(--line);
+    border-top: 2px solid var(--line-soft);
   }
 
 }
