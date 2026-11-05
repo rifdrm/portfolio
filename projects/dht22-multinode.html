@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4-Node Temperature & Humidity Monitoring — Arif Darmawan</title>
+  <meta name="description" content="Four DHT22 nodes stream temperature and humidity data to an Arduino Mega for display on an OLED.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="4-Node Temperature & Humidity Monitoring — Arif Darmawan">
+  <meta property="og:description" content="Four DHT22 nodes stream temperature and humidity data to an Arduino Mega for display on an OLED.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem("theme");
+        if (!theme) {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.lang = localStorage.getItem("lang") || "en";
+        document.documentElement.classList.add("js");
+      } catch (error) {
+        document.documentElement.classList.add("js");
+      }
+    })();
+  </script>
+</head>
+<body data-base="../" data-project="dht22-multinode">
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <header class="site-header invert">
+    <a class="wordmark" href="../index.html">Arif Darmawan</a>
+    <button class="menu-toggle control-btn" type="button" aria-expanded="false" aria-controls="site-panel">
+      <span class="menu-label-open" data-i18n="nav.menu">Menu</span>
+      <span class="menu-label-close" data-i18n="nav.close">Close</span>
+    </button>
+    <div class="site-panel" id="site-panel">
+      <nav class="site-nav" aria-label="Primary navigation" data-i18n-aria="nav.primary">
+        <a href="../index.html#projects" aria-current="page" data-i18n="nav.projects">Projects</a>
+        <a href="../index.html#about" data-i18n="nav.about">About</a>
+        <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Change language" data-i18n-aria="lang.label">
+          <button class="control-btn" type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+          <button class="control-btn" type="button" data-lang-btn="id" aria-pressed="false">ID</button>
+        </div>
+        <button class="control-btn" type="button" id="theme-toggle" aria-pressed="false" aria-label="Toggle color theme" data-i18n-aria="theme.label">Dark</button>
+        <a class="control-btn cv-link" href="../resume.pdf" download data-i18n="nav.cv">CV ↓</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="project-root"></div>
+    <noscript>
+      <div class="wrap" style="padding-block: 64px;">
+        <p class="kicker">JavaScript is required to display this project page.</p>
+        <p><a href="../index.html">Back to home</a></p>
+      </div>
+    </noscript>
+  </main>
+
+  <footer class="site-footer invert">
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/muhamadarifdarmawan" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:helloarifdarmawan@gmail.com">Email</a>
+        <a href="../resume.pdf" download>CV</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Arif Darmawan. <span data-i18n="footer.rights">All rights reserved.</span></span>
+        <a href="#main" data-i18n="footer.top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" id="to-top" aria-label="Back to top" data-i18n-aria="footer.top">↑</button>
+
+  <script src="../assets/js/i18n.js" defer></script>
+  <script src="../assets/data/projects.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

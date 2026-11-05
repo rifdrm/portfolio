@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arif Darmawan — Computer Engineering Portfolio</title>
+  <meta name="description" content="Portfolio of Arif Darmawan, a Computer Engineering Technology student building embedded systems, IoT devices, and automation projects.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Arif Darmawan — Computer Engineering Portfolio">
+  <meta property="og:description" content="Embedded systems, IoT devices, and automation projects.">
+  <meta property="og:image" content="assets/img/satpam-q/satpam-q-dashboard.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem("theme");
+        if (!theme) {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.lang = localStorage.getItem("lang") || "en";
+        document.documentElement.classList.add("js");
+      } catch (error) {
+        document.documentElement.classList.add("js");
+      }
+    })();
+  </script>
+</head>
+<body data-base="" data-title-key="meta.title" data-desc-key="meta.description">
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <header class="site-header invert">
+    <a class="wordmark" href="index.html">Arif Darmawan</a>
+    <button class="menu-toggle control-btn" type="button" aria-expanded="false" aria-controls="site-panel">
+      <span class="menu-label-open" data-i18n="nav.menu">Menu</span>
+      <span class="menu-label-close" data-i18n="nav.close">Close</span>
+    </button>
+    <div class="site-panel" id="site-panel">
+      <nav class="site-nav" aria-label="Primary navigation" data-i18n-aria="nav.primary">
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Change language" data-i18n-aria="lang.label">
+          <button class="control-btn" type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+          <button class="control-btn" type="button" data-lang-btn="id" aria-pressed="false">ID</button>
+        </div>
+        <button class="control-btn" type="button" id="theme-toggle" aria-pressed="false" aria-label="Toggle color theme" data-i18n-aria="theme.label">Dark</button>
+        <a class="control-btn cv-link" href="resume.pdf" download data-i18n="nav.cv">CV ↓</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero invert" id="home">
+      <div class="wrap">
+        <p class="kicker hero-kicker" data-i18n="hero.kicker">Portfolio / 2026</p>
+        <div class="hero-grid">
+          <h1 class="hero-title">
+            <span>Arif</span>
+            <span>Darmawan</span>
+          </h1>
+          <div class="hero-aside">
+            <p class="hero-role" data-i18n="hero.role">Computer Engineering Technology Student</p>
+            <p class="hero-lead" data-i18n="hero.lead">I build embedded systems, IoT devices, and automation projects — from circuits and PCBs to firmware, dashboards, and HMIs.</p>
+            <div class="hero-actions">
+              <a class="btn btn--large" href="#projects" data-i18n="hero.ctaProjects">View projects</a>
+              <a class="btn btn--outline btn--large" href="resume.pdf" download data-i18n="hero.ctaCv">Download CV</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-meta">
+          <span data-i18n="hero.metaLocation">Bogor, Indonesia</span>
+          <span data-i18n="hero.metaFocus">Embedded · IoT · Automation</span>
+          <span data-i18n="hero.availability">Open to first internship</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker" data-i18n="projects.kicker">Selected work</p>
+            <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+          </div>
+          <p class="section-lead" data-i18n="projects.lead">Six projects across electronics, digital logic, sensors, mobile, IoT, and PLC automation.</p>
+        </div>
+
+        <div class="projects-toolbar">
+          <div class="filters" role="group" aria-label="Filter projects" data-i18n-aria="filter.label">
+            <button class="filter-btn" type="button" data-filter="all" aria-pressed="true" data-i18n="filter.all">All</button>
+            <button class="filter-btn" type="button" data-filter="electronics" aria-pressed="false" data-i18n="filter.electronics">Electronics</button>
+            <button class="filter-btn" type="button" data-filter="digital" aria-pressed="false" data-i18n="filter.digital">Digital</button>
+            <button class="filter-btn" type="button" data-filter="sensors" aria-pressed="false" data-i18n="filter.sensors">Sensors</button>
+            <button class="filter-btn" type="button" data-filter="mobile" aria-pressed="false" data-i18n="filter.mobile">Mobile</button>
+            <button class="filter-btn" type="button" data-filter="iot" aria-pressed="false" data-i18n="filter.iot">IoT</button>
+            <button class="filter-btn" type="button" data-filter="plc" aria-pressed="false" data-i18n="filter.plc">PLC</button>
+          </div>
+          <p class="project-count" id="project-count" aria-live="polite">6 projects</p>
+        </div>
+
+        <div class="project-grid" id="project-grid"></div>
+        <noscript>
+          <p class="kicker">JavaScript is required to display the project cards.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker" data-i18n="about.kicker">About</p>
+            <h2 class="section-title" data-i18n="about.title">Short profile</h2>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p data-i18n="about.p1">I am a Computer Engineering Technology student at IPB University, focused on hardware-software integration. My work sits between the circuit and the interface: sensors, microcontrollers, firmware, cloud dashboards, and industrial control.</p>
+            <p data-i18n="about.p2">This site is a project archive, not a full CV. For the complete resume, use the download below.</p>
+            <a class="btn" href="resume.pdf" download data-i18n="about.cv">Download full CV</a>
+          </div>
+          <div>
+            <div class="fact-block">
+              <p class="kicker" data-i18n="about.educationLabel">Education</p>
+              <p class="fact-title" data-i18n="about.education">IPB University — B.S. Computer Engineering Technology</p>
+              <p class="fact-meta" data-i18n="about.educationMeta">2024–2028 (expected) · GPA 3.83/4.00</p>
+            </div>
+            <div class="fact-block">
+              <p class="kicker" data-i18n="about.skillsLabel">Core skills</p>
+              <div class="skill-list">
+                <span class="tag">Python</span>
+                <span class="tag">C++</span>
+                <span class="tag">SQL</span>
+                <span class="tag">ESP32</span>
+                <span class="tag">Arduino</span>
+                <span class="tag">PLC</span>
+                <span class="tag">MQTT</span>
+                <span class="tag">HTTP/REST</span>
+                <span class="tag">UART</span>
+                <span class="tag">SPI</span>
+                <span class="tag">I2C</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">PlatformIO</span>
+                <span class="tag">CX-Programmer</span>
+                <span class="tag">Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section invert" id="contact">
+      <div class="wrap contact">
+        <div>
+          <p class="kicker" data-i18n="contact.kicker">Contact</p>
+          <h2 class="contact-title" data-i18n="contact.title">Let’s work together</h2>
+          <p class="contact-lead" data-i18n="contact.lead">Open to internship opportunities and project collaborations.</p>
+        </div>
+        <div>
+          <dl class="contact-list">
+            <div class="contact-row">
+              <dt data-i18n="contact.emailLabel">Email</dt>
+              <dd><a href="mailto:helloarifdarmawan@gmail.com">helloarifdarmawan@gmail.com</a></dd>
+            </div>
+            <div class="contact-row">
+              <dt data-i18n="contact.linkedinLabel">LinkedIn</dt>
+              <dd><a href="https://www.linkedin.com/in/muhamadarifdarmawan" target="_blank" rel="noopener">linkedin.com/in/muhamadarifdarmawan</a></dd>
+            </div>
+          </dl>
+          <div class="contact-actions">
+            <a class="btn btn--large" href="mailto:helloarifdarmawan@gmail.com" data-i18n="contact.cta">Send an email</a>
+            <button class="btn btn--outline btn--large" type="button" data-copy-email="helloarifdarmawan@gmail.com">
+              <span data-copy-label data-i18n="contact.copy">Copy email</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer invert">
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/muhamadarifdarmawan" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:helloarifdarmawan@gmail.com">Email</a>
+        <a href="resume.pdf" download>CV</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Arif Darmawan. <span data-i18n="footer.rights">All rights reserved.</span></span>
+        <a href="#home" data-i18n="footer.top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" id="to-top" aria-label="Back to top" data-i18n-aria="footer.top">↑</button>
+
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/data/projects.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

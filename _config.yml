@@ -1,0 +1,4 @@
+exclude:
+  - sumber
+  - DESIGN.md
+  - PRD.md
