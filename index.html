@@ -34,6 +34,7 @@
 
   <header class="site-header invert">
     <a class="wordmark" href="index.html">Arif Darmawan</a>
+    <button class="control-btn mobile-lang" type="button" data-lang-toggle aria-label="Change language" data-i18n-aria="lang.label">EN</button>
     <button class="menu-toggle control-btn" type="button" aria-expanded="false" aria-controls="site-panel">
       <span class="menu-label-open" data-i18n="nav.menu">Menu</span>
       <span class="menu-label-close" data-i18n="nav.close">Close</span>
@@ -43,6 +44,7 @@
         <a href="#projects" data-i18n="nav.projects">Projects</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="mailto:helloarifdarmawan@gmail.com" data-i18n="nav.email">Email</a>
       </nav>
       <div class="header-actions">
         <div class="lang-switch" role="group" aria-label="Change language" data-i18n-aria="lang.label">
@@ -95,16 +97,6 @@
         </div>
 
         <div class="projects-toolbar">
-          <label class="sr-only" for="filter-select" data-i18n="filter.label">Filter projects</label>
-          <select class="filter-select" id="filter-select">
-            <option value="all" data-i18n="filter.all">All</option>
-            <option value="electronics" data-i18n="filter.electronics">Electronics</option>
-            <option value="digital" data-i18n="filter.digital">Digital</option>
-            <option value="sensors" data-i18n="filter.sensors">Sensors</option>
-            <option value="mobile" data-i18n="filter.mobile">Mobile</option>
-            <option value="iot" data-i18n="filter.iot">IoT</option>
-            <option value="plc" data-i18n="filter.plc">PLC</option>
-          </select>
           <div class="filters" role="group" aria-label="Filter projects" data-i18n-aria="filter.label">
             <button class="filter-btn" type="button" data-filter="all" aria-pressed="true" data-i18n="filter.all">All</button>
             <button class="filter-btn" type="button" data-filter="electronics" aria-pressed="false" data-i18n="filter.electronics">Electronics</button>
@@ -128,7 +120,7 @@
               <h3 class="card-title">IR LED-Based Safe Parking System</h3>
               <p class="card-summary">A parking aid that uses infrared sensing and a buzzer to warn drivers about obstacles around the vehicle.</p>
               <div class="card-tags"><span class="tag">Electronics</span></div>
-              <div class="card-footer"><span>Team Lead</span><span>View project</span></div>
+              <div class="card-footer"><span class="card-role">Team Lead</span><span class="card-action">View project</span></div>
             </div>
           </a>
           <a class="project-card" href="projects/museum-touch-alarm.html">
@@ -141,7 +133,7 @@
               <h3 class="card-title">Touch-Sensor Museum Security Alarm</h3>
               <p class="card-summary">A security alarm built with a TTP223 touch sensor, 555 timer, and 74LS73 to detect contact with exhibition objects.</p>
               <div class="card-tags"><span class="tag">Digital</span></div>
-              <div class="card-footer"><span>Team Member</span><span>View project</span></div>
+              <div class="card-footer"><span class="card-role">Team Member</span><span class="card-action">View project</span></div>
             </div>
           </a>
           <a class="project-card" href="projects/dht22-multinode.html">
@@ -154,7 +146,7 @@
               <h3 class="card-title">4-Node Temperature &amp; Humidity Monitoring</h3>
               <p class="card-summary">Four DHT22 nodes stream temperature and humidity data to an Arduino Mega for display on an OLED.</p>
               <div class="card-tags"><span class="tag">Sensors</span></div>
-              <div class="card-footer"><span>Developer</span><span>View project</span></div>
+              <div class="card-footer"><span class="card-role">Developer</span><span class="card-action">View project</span></div>
             </div>
           </a>
           <a class="project-card" href="projects/satpam-q.html">
@@ -167,7 +159,7 @@
               <h3 class="card-title">SATPAM-Q: Quail House Microclimate Control</h3>
               <p class="card-summary">An IoT system that monitors quail-house temperature, humidity, and ammonia, then controls an exhaust fan and mist sprayer.</p>
               <div class="card-tags"><span class="tag">Mobile</span><span class="tag">IoT</span></div>
-              <div class="card-footer"><span>Team Member</span><span>View project</span></div>
+              <div class="card-footer"><span class="card-role">Team Member</span><span class="card-action">View project</span></div>
             </div>
           </a>
           <a class="project-card" href="projects/sassy.html">
@@ -180,7 +172,7 @@
               <h3 class="card-title">SASSY: Smart Automatic Steaming System</h3>
               <p class="card-summary">An IoT-based monitoring and automatic control system for the ecoprint steaming process at a small business.</p>
               <div class="card-tags"><span class="tag">IoT</span></div>
-              <div class="card-footer"><span>Team Member</span><span>View project</span></div>
+              <div class="card-footer"><span class="card-role">Team Member</span><span class="card-action">View project</span></div>
             </div>
           </a>
           <a class="project-card" href="projects/plc-conveyor.html">
@@ -193,14 +185,14 @@
               <h3 class="card-title">Nut &amp; Cashew Packaging Conveyor System</h3>
               <p class="card-summary">A PLC case study with three conveyors, counters, and an HMI to package nuts and cashews into boxes.</p>
               <div class="card-tags"><span class="tag">PLC</span></div>
-              <div class="card-footer"><span>Ladder &amp; HMI Designer</span><span>View project</span></div>
+              <div class="card-footer"><span class="card-role">Ladder &amp; HMI Designer</span><span class="card-action">View project</span></div>
             </div>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="section section--surface" id="about">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -222,15 +214,20 @@
               <p class="fact-meta" data-i18n="about.educationMeta">2024–2028 (expected) · GPA 3.83/4.00</p>
             </div>
             <div class="fact-block">
-              <p class="kicker" data-i18n="about.skillsLabel">Core skills</p>
+              <p class="kicker" data-i18n="about.primarySkillsLabel">Primary stack</p>
               <div class="skill-list">
-                <span class="tag">Python</span>
-                <span class="tag">C++</span>
-                <span class="tag">SQL</span>
                 <span class="tag">ESP32</span>
                 <span class="tag">Arduino</span>
                 <span class="tag">PLC</span>
+                <span class="tag">C++</span>
+                <span class="tag">Python</span>
                 <span class="tag">MQTT</span>
+              </div>
+            </div>
+            <div class="fact-block">
+              <p class="kicker" data-i18n="about.supportingSkillsLabel">Supporting</p>
+              <div class="skill-list">
+                <span class="tag">SQL</span>
                 <span class="tag">HTTP/REST</span>
                 <span class="tag">UART</span>
                 <span class="tag">SPI</span>

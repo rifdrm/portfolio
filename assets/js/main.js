@@ -5,6 +5,7 @@
   var body = document.body;
   var base = body.getAttribute("data-base") || "";
   var state = { filter: "all" };
+  var lightboxState = { triggers: [], index: 0, show: null };
 
   function lang() {
     return root.lang === "id" ? "id" : "en";
@@ -102,6 +103,10 @@
       button.setAttribute("aria-pressed", active ? "true" : "false");
     });
 
+    document.querySelectorAll("[data-lang-toggle]").forEach(function (button) {
+      button.textContent = lang().toUpperCase();
+    });
+
     var openPanel = document.getElementById("site-panel");
     if (openPanel && body.classList.contains("menu-open")) {
       openPanel.setAttribute("aria-label", t("nav.menu"));
@@ -170,7 +175,7 @@
           '<h3 class="card-title">' + esc(project.title[lang()]) + "</h3>" +
           '<p class="card-summary">' + esc(project.summary[lang()]) + "</p>" +
           '<div class="card-tags">' + categoryTags + "</div>" +
-          '<div class="card-footer"><span>' + esc(project.role[lang()]) + "</span><span>" + esc(t("card.view")) + "</span></div>" +
+          '<div class="card-footer"><span class="card-role">' + esc(project.role[lang()]) + '</span><span class="card-action">' + esc(t("card.view")) + "</span></div>" +
         "</div>" +
       "</a>"
     );
@@ -194,8 +199,6 @@
     document.querySelectorAll("[data-filter]").forEach(function (item) {
       item.setAttribute("aria-pressed", item.getAttribute("data-filter") === value ? "true" : "false");
     });
-    var select = document.getElementById("filter-select");
-    if (select) select.value = value;
     renderHome();
   }
 
@@ -205,13 +208,6 @@
         setFilter(button.getAttribute("data-filter"));
       });
     });
-
-    var select = document.getElementById("filter-select");
-    if (select) {
-      select.addEventListener("change", function () {
-        setFilter(select.value);
-      });
-    }
   }
 
   function renderProject() {
@@ -371,10 +367,18 @@
     dialog = document.createElement("dialog");
     dialog.id = "lightbox";
     dialog.className = "lightbox";
-    dialog.setAttribute("aria-label", "Image preview");
+    dialog.setAttribute("aria-label", t("lightbox.label"));
     dialog.innerHTML =
       '<img id="lightbox-image" src="" alt="">' +
-      '<div class="lightbox-bar"><span id="lightbox-caption"></span><button class="lightbox-close" type="button" data-lightbox-close>Close</button></div>';
+      '<div class="lightbox-bar">' +
+        '<span id="lightbox-caption" aria-live="polite"></span>' +
+        '<div class="lightbox-actions">' +
+          '<button class="lightbox-nav" type="button" data-lightbox-prev aria-label="Previous image">←</button>' +
+          '<span id="lightbox-counter" class="lightbox-counter" aria-live="polite"></span>' +
+          '<button class="lightbox-nav" type="button" data-lightbox-next aria-label="Next image">→</button>' +
+          '<button class="lightbox-close" type="button" data-lightbox-close>Close</button>' +
+        "</div>" +
+      "</div>";
     document.body.appendChild(dialog);
 
     dialog.querySelector("[data-lightbox-close]").addEventListener("click", function () {
@@ -385,6 +389,29 @@
       if (event.target === dialog) dialog.close();
     });
 
+    function step(delta) {
+      if (lightboxState.show) lightboxState.show(lightboxState.index + delta);
+    }
+
+    dialog.querySelector("[data-lightbox-prev]").addEventListener("click", function () {
+      step(-1);
+    });
+
+    dialog.querySelector("[data-lightbox-next]").addEventListener("click", function () {
+      step(1);
+    });
+
+    dialog.addEventListener("keydown", function (event) {
+      if (!dialog.open) return;
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        step(-1);
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        step(1);
+      }
+    });
+
     return dialog;
   }
 
@@ -392,27 +419,52 @@
     var dialog = ensureLightbox();
     var image = dialog.querySelector("#lightbox-image");
     var caption = dialog.querySelector("#lightbox-caption");
+    var counter = dialog.querySelector("#lightbox-counter");
     var close = dialog.querySelector("[data-lightbox-close]");
+    var prev = dialog.querySelector("[data-lightbox-prev]");
+    var next = dialog.querySelector("[data-lightbox-next]");
+    var triggers = Array.prototype.slice.call(document.querySelectorAll("[data-lightbox-src]"));
 
-    document.querySelectorAll("[data-lightbox-src]").forEach(function (trigger) {
+    dialog.classList.toggle("lightbox--single", triggers.length <= 1);
+    prev.setAttribute("aria-label", t("lightbox.prev"));
+    prev.setAttribute("title", t("lightbox.prev"));
+    next.setAttribute("aria-label", t("lightbox.next"));
+    next.setAttribute("title", t("lightbox.next"));
+    close.textContent = t("lightbox.close");
+    dialog.setAttribute("aria-label", t("lightbox.label"));
+
+    function show(index) {
+      if (!triggers.length) return;
+      var nextIndex = (index + triggers.length) % triggers.length;
+      var trigger = triggers[nextIndex];
+      image.setAttribute("src", trigger.getAttribute("data-lightbox-src"));
+      image.setAttribute("alt", trigger.getAttribute("data-lightbox-caption") || "");
+      var lightboxWidth = trigger.getAttribute("data-lightbox-w");
+      var lightboxHeight = trigger.getAttribute("data-lightbox-h");
+      if (lightboxWidth && lightboxHeight) {
+        image.setAttribute("width", lightboxWidth);
+        image.setAttribute("height", lightboxHeight);
+      } else {
+        image.removeAttribute("width");
+        image.removeAttribute("height");
+      }
+      caption.textContent = trigger.getAttribute("data-lightbox-caption") || "";
+      counter.textContent = (nextIndex + 1) + " / " + triggers.length;
+      lightboxState.index = nextIndex;
+    }
+
+    lightboxState.triggers = triggers;
+    lightboxState.show = show;
+
+    triggers.forEach(function (trigger, index) {
       trigger.addEventListener("click", function () {
-        image.setAttribute("src", trigger.getAttribute("data-lightbox-src"));
-        image.setAttribute("alt", trigger.getAttribute("data-lightbox-caption") || "");
-        var lightboxWidth = trigger.getAttribute("data-lightbox-w");
-        var lightboxHeight = trigger.getAttribute("data-lightbox-h");
-        if (lightboxWidth && lightboxHeight) {
-          image.setAttribute("width", lightboxWidth);
-          image.setAttribute("height", lightboxHeight);
-        } else {
-          image.removeAttribute("width");
-          image.removeAttribute("height");
-        }
-        caption.textContent = trigger.getAttribute("data-lightbox-caption") || "";
-        close.textContent = lang() === "id" ? "Tutup" : "Close";
-        dialog.setAttribute("aria-label", lang() === "id" ? "Pratinjau gambar" : "Image preview");
+        show(index);
+        close.textContent = t("lightbox.close");
+        dialog.setAttribute("aria-label", t("lightbox.label"));
         if (typeof dialog.showModal === "function") {
           dialog.showModal();
         }
+        close.focus();
       });
     });
   }
@@ -483,11 +535,11 @@
     ].filter(Boolean);
 
     function focusables() {
-      var nodes = [toggle].concat(
+      var nodes = [document.querySelector(".mobile-lang"), toggle].concat(
         Array.prototype.slice.call(
           panel.querySelectorAll('a[href], button:not([disabled]), select, input, [tabindex]:not([tabindex="-1"])')
         )
-      );
+      ).filter(Boolean);
       return nodes.filter(function (element) {
         var rect = element.getBoundingClientRect();
         var style = window.getComputedStyle(element);
@@ -499,7 +551,6 @@
       body.classList.add("menu-open", "is-menu-open");
       toggle.setAttribute("aria-expanded", "true");
       panel.setAttribute("role", "dialog");
-      panel.setAttribute("aria-modal", "true");
       panel.setAttribute("aria-label", t("nav.menu"));
       background.forEach(function (element) {
         element.setAttribute("inert", "");
@@ -517,7 +568,6 @@
       body.classList.remove("menu-open", "is-menu-open");
       toggle.setAttribute("aria-expanded", "false");
       panel.removeAttribute("role");
-      panel.removeAttribute("aria-modal");
       panel.removeAttribute("aria-label");
       background.forEach(function (element) {
         element.removeAttribute("inert");
@@ -584,6 +634,12 @@
     document.querySelectorAll("[data-lang-btn]").forEach(function (button) {
       button.addEventListener("click", function () {
         setLang(button.getAttribute("data-lang-btn"));
+      });
+    });
+
+    document.querySelectorAll("[data-lang-toggle]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        setLang(lang() === "id" ? "en" : "id");
       });
     });
   }
