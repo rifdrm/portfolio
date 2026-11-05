@@ -3,3 +3,6 @@ DESIGN.md/
 PRD.md
 .DS_Store
 Thumbs.db
+anti-slop/
+.opencode/
+AGENTS.md

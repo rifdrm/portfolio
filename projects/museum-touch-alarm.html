@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Touch-Sensor Museum Security Alarm — Arif Darmawan</title>
+  <title>Touch-Sensor Museum Security Alarm | Arif Darmawan</title>
   <meta name="description" content="A low-cost museum security alarm built with a TTP223 touch sensor, 555 timer, and 74LS73 flip-flop.">
   <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Touch-Sensor Museum Security Alarm — Arif Darmawan">
+  <meta property="og:title" content="Touch-Sensor Museum Security Alarm | Arif Darmawan">
   <meta property="og:description" content="A low-cost museum security alarm built with a TTP223 touch sensor, 555 timer, and 74LS73 flip-flop.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -39,7 +39,7 @@
     </button>
     <div class="site-panel" id="site-panel">
       <nav class="site-nav" aria-label="Primary navigation" data-i18n-aria="nav.primary">
-        <a href="../index.html#projects" aria-current="page" data-i18n="nav.projects">Projects</a>
+        <a href="../index.html#projects" aria-current="location" data-i18n="nav.projects">Projects</a>
         <a href="../index.html#about" data-i18n="nav.about">About</a>
         <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
       </nav>
@@ -58,13 +58,69 @@
   </header>
 
   <main id="main">
-    <div id="project-root"></div>
-    <noscript>
-      <div class="wrap" style="padding-block: 64px;">
-        <p class="kicker">JavaScript is required to display this project page.</p>
-        <p><a href="../index.html">Back to home</a></p>
+    <div id="project-root">
+      <section class="project-hero">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span>/</span><a href="../index.html#projects">Projects</a><span>/</span><span>Touch-Sensor Museum Security Alarm</span>
+          </nav>
+          <p class="kicker">Project 02 / 2025</p>
+          <h1 class="project-title">Touch-Sensor Museum Security Alarm</h1>
+          <p class="project-summary">A security alarm built with a TTP223 touch sensor, 555 timer, and 74LS73 to detect contact with exhibition objects.</p>
+          <dl class="project-facts">
+            <div class="fact"><dt>Category</dt><dd>Digital</dd></div>
+            <div class="fact"><dt>Year</dt><dd>2025</dd></div>
+            <div class="fact"><dt>Role</dt><dd>Team Member</dd></div>
+            <div class="fact"><dt>Status</dt><dd><span class="status-chip status-chip--done">Completed</span></dd></div>
+          </dl>
+          <div class="project-cover"><img src="../assets/img/museum/museum-alarm-schematic.webp" alt="Touch-Sensor Museum Security Alarm" width="1600" height="1174" fetchpriority="high"></div>
+        </div>
+      </section>
+      <div class="wrap">
+        <section class="content-section">
+          <h2 class="content-label">Overview</h2>
+          <div class="content-main"><p>Museums hold high-value collections, but conventional security systems struggle to detect direct contact with exhibition objects. This project designed a simple alarm that reacts when a visitor touches a protected object.</p><p>The touch sensor signal is converted into a timed pulse by a 555 timer and latched by a 74LS73 flip-flop so the alarm state stays active. An LED provides the visual indicator.</p></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">The build</h2>
+          <div class="content-main"><ul><li>TTP223 touch sensor as the trigger.</li><li>555 timer as the timing pulse generator.</li><li>74LS73 flip-flop as the logic state latch.</li><li>LED as the visual alarm indicator.</li><li>The circuit was assembled on PCB after breadboard testing.</li></ul></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">My role</h2>
+          <div class="content-main"><ul><li>Helped design and test the circuit on a breadboard.</li><li>Assembled and soldered components onto the PCB.</li><li>Tested sensor response, pulse duration, and alarm state.</li></ul></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">Tech stack</h2>
+          <div class="content-main"><div class="stack-list"><span class="tag">TTP223</span><span class="tag">IC 555</span><span class="tag">74LS73</span><span class="tag">PCB Design</span></div></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">Gallery</h2>
+          <div class="content-main"><div class="gallery-grid gallery-grid--single">
+<figure class="gallery-item">
+  <video controls muted loop playsinline preload="metadata" width="364" height="364" poster="../assets/img/museum/museum-alarm-schematic.webp">
+    <source src="../assets/img/museum/museum-alarm-demo.webm" type="video/webm">
+    <source src="../assets/img/museum/museum-alarm-demo.mp4" type="video/mp4">
+  </video>
+  <figcaption>Demonstration of the device detecting touch.</figcaption>
+</figure>
+          </div></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">Outcome</h2>
+          <div class="content-main"><p>The system responded to touch by activating the visual indicator and holding the alarm state. The solution is low-cost, easy to install, and unobtrusive in an exhibition space.</p></div>
+        </section>
+        <nav class="project-nav" aria-label="Project navigation">
+          <a href="../projects/parking-ir-led.html"><span class="kicker">← Previous project</span><strong>IR LED-Based Safe Parking System</strong></a>
+          <a href="../projects/dht22-multinode.html"><span class="kicker">Next project →</span><strong>4-Node Temperature &amp; Humidity Monitoring</strong></a>
+        </nav>
       </div>
-    </noscript>
+      <section class="project-cta invert">
+        <div class="wrap">
+          <div><h2>Have a similar project?</h2><p>I am available for an internship and open to collaborating on hardware, IoT, and automation work.</p></div>
+          <div><a class="btn btn--large" href="mailto:helloarifdarmawan@gmail.com?subject=Project%20inquiry%3A%20Touch-Sensor%20Museum%20Security%20Alarm">Email about this project</a></div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer invert">
@@ -85,6 +141,7 @@
 
   <script src="../assets/js/i18n.js" defer></script>
   <script src="../assets/data/projects.js" defer></script>
+  <script src="../assets/data/media.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

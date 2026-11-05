@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arif Darmawan — Computer Engineering Portfolio</title>
+  <title>Arif Darmawan | Computer Engineering Portfolio</title>
   <meta name="description" content="Portfolio of Arif Darmawan, a Computer Engineering Technology student building embedded systems, IoT devices, and automation projects.">
   <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Arif Darmawan — Computer Engineering Portfolio">
+  <meta property="og:title" content="Arif Darmawan | Computer Engineering Portfolio">
   <meta property="og:description" content="Embedded systems, IoT devices, and automation projects.">
   <meta property="og:image" content="assets/img/satpam-q/satpam-q-dashboard.webp">
   <meta name="twitter:card" content="summary_large_image">
@@ -69,7 +69,7 @@
           </h1>
           <div class="hero-aside">
             <p class="hero-role" data-i18n="hero.role">Computer Engineering Technology Student</p>
-            <p class="hero-lead" data-i18n="hero.lead">I build embedded systems, IoT devices, and automation projects — from circuits and PCBs to firmware, dashboards, and HMIs.</p>
+            <p class="hero-lead" data-i18n="hero.lead">I build embedded systems, IoT devices, and automation projects, from circuits and PCBs to firmware, dashboards, and HMIs.</p>
             <div class="hero-actions">
               <a class="btn btn--large" href="#projects" data-i18n="hero.ctaProjects">View projects</a>
               <a class="btn btn--outline btn--large" href="resume.pdf" download data-i18n="hero.ctaCv">Download CV</a>
@@ -95,6 +95,16 @@
         </div>
 
         <div class="projects-toolbar">
+          <label class="sr-only" for="filter-select" data-i18n="filter.label">Filter projects</label>
+          <select class="filter-select" id="filter-select">
+            <option value="all" data-i18n="filter.all">All</option>
+            <option value="electronics" data-i18n="filter.electronics">Electronics</option>
+            <option value="digital" data-i18n="filter.digital">Digital</option>
+            <option value="sensors" data-i18n="filter.sensors">Sensors</option>
+            <option value="mobile" data-i18n="filter.mobile">Mobile</option>
+            <option value="iot" data-i18n="filter.iot">IoT</option>
+            <option value="plc" data-i18n="filter.plc">PLC</option>
+          </select>
           <div class="filters" role="group" aria-label="Filter projects" data-i18n-aria="filter.label">
             <button class="filter-btn" type="button" data-filter="all" aria-pressed="true" data-i18n="filter.all">All</button>
             <button class="filter-btn" type="button" data-filter="electronics" aria-pressed="false" data-i18n="filter.electronics">Electronics</button>
@@ -107,10 +117,86 @@
           <p class="project-count" id="project-count" aria-live="polite">6 projects</p>
         </div>
 
-        <div class="project-grid" id="project-grid"></div>
-        <noscript>
-          <p class="kicker">JavaScript is required to display the project cards.</p>
-        </noscript>
+        <div class="project-grid" id="project-grid">
+          <a class="project-card" href="projects/parking-ir-led.html">
+            <div class="card-media">
+              <img src="assets/img/parking/safe-parking-schematic.webp" alt="IR LED-Based Safe Parking System" width="1600" height="1220" loading="eager">
+              
+            </div>
+            <div class="card-body">
+              <div class="card-topline"><span class="card-number">01</span><span>2024</span></div>
+              <h3 class="card-title">IR LED-Based Safe Parking System</h3>
+              <p class="card-summary">A parking aid that uses infrared sensing and a buzzer to warn drivers about obstacles around the vehicle.</p>
+              <div class="card-tags"><span class="tag">Electronics</span></div>
+              <div class="card-footer"><span>Team Lead</span><span>View project</span></div>
+            </div>
+          </a>
+          <a class="project-card" href="projects/museum-touch-alarm.html">
+            <div class="card-media">
+              <img src="assets/img/museum/museum-alarm-schematic.webp" alt="Touch-Sensor Museum Security Alarm" width="1600" height="1174" loading="eager">
+              
+            </div>
+            <div class="card-body">
+              <div class="card-topline"><span class="card-number">02</span><span>2025</span></div>
+              <h3 class="card-title">Touch-Sensor Museum Security Alarm</h3>
+              <p class="card-summary">A security alarm built with a TTP223 touch sensor, 555 timer, and 74LS73 to detect contact with exhibition objects.</p>
+              <div class="card-tags"><span class="tag">Digital</span></div>
+              <div class="card-footer"><span>Team Member</span><span>View project</span></div>
+            </div>
+          </a>
+          <a class="project-card" href="projects/dht22-multinode.html">
+            <div class="card-media">
+              <img src="assets/img/dht22/multinode-monitor-demo-poster.webp" alt="4-Node Temperature &amp; Humidity Monitoring" width="540" height="304" loading="eager">
+              
+            </div>
+            <div class="card-body">
+              <div class="card-topline"><span class="card-number">03</span><span>2025</span></div>
+              <h3 class="card-title">4-Node Temperature &amp; Humidity Monitoring</h3>
+              <p class="card-summary">Four DHT22 nodes stream temperature and humidity data to an Arduino Mega for display on an OLED.</p>
+              <div class="card-tags"><span class="tag">Sensors</span></div>
+              <div class="card-footer"><span>Developer</span><span>View project</span></div>
+            </div>
+          </a>
+          <a class="project-card" href="projects/satpam-q.html">
+            <div class="card-media">
+              <img src="assets/img/satpam-q/satpam-q-dashboard.webp" alt="SATPAM-Q: Quail House Microclimate Control" width="1600" height="784" loading="lazy">
+              
+            </div>
+            <div class="card-body">
+              <div class="card-topline"><span class="card-number">04</span><span>2026</span></div>
+              <h3 class="card-title">SATPAM-Q: Quail House Microclimate Control</h3>
+              <p class="card-summary">An IoT system that monitors quail-house temperature, humidity, and ammonia, then controls an exhaust fan and mist sprayer.</p>
+              <div class="card-tags"><span class="tag">Mobile</span><span class="tag">IoT</span></div>
+              <div class="card-footer"><span>Team Member</span><span>View project</span></div>
+            </div>
+          </a>
+          <a class="project-card" href="projects/sassy.html">
+            <div class="card-media">
+              <img src="assets/img/sassy/sassy-3d-design.webp" alt="SASSY: Smart Automatic Steaming System" width="1189" height="734" loading="lazy">
+              <span class="wip-badge">WIP</span>
+            </div>
+            <div class="card-body">
+              <div class="card-topline"><span class="card-number">05</span><span>2026</span></div>
+              <h3 class="card-title">SASSY: Smart Automatic Steaming System</h3>
+              <p class="card-summary">An IoT-based monitoring and automatic control system for the ecoprint steaming process at a small business.</p>
+              <div class="card-tags"><span class="tag">IoT</span></div>
+              <div class="card-footer"><span>Team Member</span><span>View project</span></div>
+            </div>
+          </a>
+          <a class="project-card" href="projects/plc-conveyor.html">
+            <div class="card-media">
+              <img src="assets/img/plc/plc-hmi-cx-designer.webp" alt="Nut &amp; Cashew Packaging Conveyor System" width="1600" height="850" loading="lazy">
+              
+            </div>
+            <div class="card-body">
+              <div class="card-topline"><span class="card-number">06</span><span>2026</span></div>
+              <h3 class="card-title">Nut &amp; Cashew Packaging Conveyor System</h3>
+              <p class="card-summary">A PLC case study with three conveyors, counters, and an HMI to package nuts and cashews into boxes.</p>
+              <div class="card-tags"><span class="tag">PLC</span></div>
+              <div class="card-footer"><span>Ladder &amp; HMI Designer</span><span>View project</span></div>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -132,7 +218,7 @@
           <div>
             <div class="fact-block">
               <p class="kicker" data-i18n="about.educationLabel">Education</p>
-              <p class="fact-title" data-i18n="about.education">IPB University — B.S. Computer Engineering Technology</p>
+              <p class="fact-title" data-i18n="about.education">IPB University, B.S. Computer Engineering Technology</p>
               <p class="fact-meta" data-i18n="about.educationMeta">2024–2028 (expected) · GPA 3.83/4.00</p>
             </div>
             <div class="fact-block">
@@ -183,6 +269,7 @@
             <button class="btn btn--outline btn--large" type="button" data-copy-email="helloarifdarmawan@gmail.com">
               <span data-copy-label data-i18n="contact.copy">Copy email</span>
             </button>
+            <span class="sr-only" role="status" aria-live="polite" data-copy-status></span>
           </div>
         </div>
       </div>
@@ -207,6 +294,7 @@
 
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/data/projects.js" defer></script>
+  <script src="assets/data/media.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

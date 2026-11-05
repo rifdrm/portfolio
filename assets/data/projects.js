@@ -233,8 +233,8 @@ window.PROJECTS = [
     status: "completed",
     role: { id: "Anggota Tim", en: "Team Member" },
     title: {
-      id: "SATPAM-Q — Microclimate Kandang Puyuh",
-      en: "SATPAM-Q — Quail House Microclimate Control"
+      id: "SATPAM-Q: Microclimate Kandang Puyuh",
+      en: "SATPAM-Q: Quail House Microclimate Control"
     },
     summary: {
       id: "Sistem IoT yang memantau suhu, kelembapan, dan amonia kandang puyuh, lalu mengendalikan exhaust fan dan mist sprayer.",
@@ -294,40 +294,40 @@ window.PROJECTS = [
         src: "assets/img/satpam-q/quail-house-installation-01.webp",
         type: "image",
         caption: {
-          id: "Instalasi perangkat pada kandang puyuh — tampak 1.",
-          en: "Device installation in the quail house — view 1."
+          id: "Instalasi perangkat pada kandang puyuh, tampak 1.",
+          en: "Device installation in the quail house, view 1."
         }
       },
       {
         src: "assets/img/satpam-q/quail-house-installation-02.webp",
         type: "image",
         caption: {
-          id: "Instalasi perangkat pada kandang puyuh — tampak 2.",
-          en: "Device installation in the quail house — view 2."
+          id: "Instalasi perangkat pada kandang puyuh, tampak 2.",
+          en: "Device installation in the quail house, view 2."
         }
       },
       {
         src: "assets/img/satpam-q/quail-house-installation-03.webp",
         type: "image",
         caption: {
-          id: "Instalasi perangkat pada kandang puyuh — tampak 3.",
-          en: "Device installation in the quail house — view 3."
+          id: "Instalasi perangkat pada kandang puyuh, tampak 3.",
+          en: "Device installation in the quail house, view 3."
         }
       },
       {
         src: "assets/img/satpam-q/quail-house-installation-04.webp",
         type: "image",
         caption: {
-          id: "Instalasi perangkat pada kandang puyuh — tampak 4.",
-          en: "Device installation in the quail house — view 4."
+          id: "Instalasi perangkat pada kandang puyuh, tampak 4.",
+          en: "Device installation in the quail house, view 4."
         }
       },
       {
         src: "assets/img/satpam-q/quail-house-installation-05.webp",
         type: "image",
         caption: {
-          id: "Instalasi perangkat pada kandang puyuh — tampak 5.",
-          en: "Device installation in the quail house — view 5."
+          id: "Instalasi perangkat pada kandang puyuh, tampak 5.",
+          en: "Device installation in the quail house, view 5."
         }
       }
     ]
@@ -340,8 +340,8 @@ window.PROJECTS = [
     status: "wip",
     role: { id: "Anggota Tim", en: "Team Member" },
     title: {
-      id: "SASSY — Smart Automatic Steaming System",
-      en: "SASSY — Smart Automatic Steaming System"
+      id: "SASSY: Smart Automatic Steaming System",
+      en: "SASSY: Smart Automatic Steaming System"
     },
     summary: {
       id: "Sistem monitoring dan kontrol otomatis proses pengukusan ecoprint berbasis IoT untuk UMKM.",
@@ -484,40 +484,40 @@ window.PROJECTS = [
         src: "assets/img/plc/plc-ladder-main-control.webp",
         type: "image",
         caption: {
-          id: "Ladder diagram — main control.",
-          en: "Ladder diagram — main control."
+          id: "Ladder diagram: main control.",
+          en: "Ladder diagram: main control."
         }
       },
       {
         src: "assets/img/plc/plc-ladder-box-management.webp",
         type: "image",
         caption: {
-          id: "Ladder diagram — box management.",
-          en: "Ladder diagram — box management."
+          id: "Ladder diagram: box management.",
+          en: "Ladder diagram: box management."
         }
       },
       {
         src: "assets/img/plc/plc-ladder-counter-comparator.webp",
         type: "image",
         caption: {
-          id: "Ladder diagram — counter dan comparator.",
-          en: "Ladder diagram — counter and comparator."
+          id: "Ladder diagram: counter dan comparator.",
+          en: "Ladder diagram: counter and comparator."
         }
       },
       {
         src: "assets/img/plc/plc-ladder-feeder-control.webp",
         type: "image",
         caption: {
-          id: "Ladder diagram — feeder control.",
-          en: "Ladder diagram — feeder control."
+          id: "Ladder diagram: feeder control.",
+          en: "Ladder diagram: feeder control."
         }
       },
       {
         src: "assets/img/plc/plc-ladder-cycle-reset.webp",
         type: "image",
         caption: {
-          id: "Ladder diagram — cycle reset.",
-          en: "Ladder diagram — cycle reset."
+          id: "Ladder diagram: cycle reset.",
+          en: "Ladder diagram: cycle reset."
         }
       }
     ]

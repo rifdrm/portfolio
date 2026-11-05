@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SATPAM-Q — Quail House Microclimate Control — Arif Darmawan</title>
+  <title>SATPAM-Q: Quail House Microclimate Control | Arif Darmawan</title>
   <meta name="description" content="An IoT system that monitors quail-house temperature, humidity, and ammonia, then controls an exhaust fan and mist sprayer.">
   <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="SATPAM-Q — Quail House Microclimate Control — Arif Darmawan">
+  <meta property="og:title" content="SATPAM-Q: Quail House Microclimate Control | Arif Darmawan">
   <meta property="og:description" content="An IoT system that monitors quail-house temperature, humidity, and ammonia, then controls an exhaust fan and mist sprayer.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -39,7 +39,7 @@
     </button>
     <div class="site-panel" id="site-panel">
       <nav class="site-nav" aria-label="Primary navigation" data-i18n-aria="nav.primary">
-        <a href="../index.html#projects" aria-current="page" data-i18n="nav.projects">Projects</a>
+        <a href="../index.html#projects" aria-current="location" data-i18n="nav.projects">Projects</a>
         <a href="../index.html#about" data-i18n="nav.about">About</a>
         <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
       </nav>
@@ -58,13 +58,82 @@
   </header>
 
   <main id="main">
-    <div id="project-root"></div>
-    <noscript>
-      <div class="wrap" style="padding-block: 64px;">
-        <p class="kicker">JavaScript is required to display this project page.</p>
-        <p><a href="../index.html">Back to home</a></p>
+    <div id="project-root">
+      <section class="project-hero">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span>/</span><a href="../index.html#projects">Projects</a><span>/</span><span>SATPAM-Q: Quail House Microclimate Control</span>
+          </nav>
+          <p class="kicker">Project 04 / 2026</p>
+          <h1 class="project-title">SATPAM-Q: Quail House Microclimate Control</h1>
+          <p class="project-summary">An IoT system that monitors quail-house temperature, humidity, and ammonia, then controls an exhaust fan and mist sprayer.</p>
+          <dl class="project-facts">
+            <div class="fact"><dt>Category</dt><dd>Mobile / IoT</dd></div>
+            <div class="fact"><dt>Year</dt><dd>2026</dd></div>
+            <div class="fact"><dt>Role</dt><dd>Team Member</dd></div>
+            <div class="fact"><dt>Status</dt><dd><span class="status-chip status-chip--done">Completed</span></dd></div>
+          </dl>
+          <div class="project-cover"><img src="../assets/img/satpam-q/satpam-q-dashboard.webp" alt="SATPAM-Q: Quail House Microclimate Control" width="1600" height="784" fetchpriority="high"></div>
+        </div>
+      </section>
+      <div class="wrap">
+        <section class="content-section">
+          <h2 class="content-label">Overview</h2>
+          <div class="content-main"><p>SATPAM-Q (Quail House Temperature Adaptation and Ammonia Suppression System) was built to keep quail houses in a safe range. Ammonia above 20 ppm and extreme temperatures can reduce bird health and productivity.</p><p>An ESP32 reads the MQ-135 and DHT22 sensors, runs edge logic to drive actuators, sends data to Firebase, and exposes a web dashboard for monitoring and manual control.</p></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">The build</h2>
+          <div class="content-main"><ul><li>ESP32 as the edge controller.</li><li>MQ-135 for ammonia and DHT22 for temperature/humidity.</li><li>LM2596 module for voltage distribution.</li><li>Two-channel relay for the 12V exhaust fan and mist sprayer.</li><li>Firebase Realtime Database and an HTML/CSS/JS web dashboard.</li></ul></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">My role</h2>
+          <div class="content-main"><ul><li>Contributed to hardware integration and sensor testing.</li><li>Helped implement the web dashboard and Firebase integration.</li><li>Ran functional tests in the quail house.</li></ul></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">Tech stack</h2>
+          <div class="content-main"><div class="stack-list"><span class="tag">ESP32</span><span class="tag">MQ-135</span><span class="tag">DHT22</span><span class="tag">Firebase</span><span class="tag">JavaScript</span><span class="tag">MQTT/HTTP</span></div></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">Gallery</h2>
+          <div class="content-main"><div class="gallery-grid">
+<figure class="gallery-item">
+  <img src="../assets/img/satpam-q/quail-house-installation-01.webp" alt="Device installation in the quail house, view 1." width="1150" height="1412" loading="lazy">
+  <figcaption>Device installation in the quail house, view 1.</figcaption>
+</figure>
+<figure class="gallery-item">
+  <img src="../assets/img/satpam-q/quail-house-installation-02.webp" alt="Device installation in the quail house, view 2." width="840" height="1344" loading="lazy">
+  <figcaption>Device installation in the quail house, view 2.</figcaption>
+</figure>
+<figure class="gallery-item">
+  <img src="../assets/img/satpam-q/quail-house-installation-03.webp" alt="Device installation in the quail house, view 3." width="1152" height="1380" loading="lazy">
+  <figcaption>Device installation in the quail house, view 3.</figcaption>
+</figure>
+<figure class="gallery-item">
+  <img src="../assets/img/satpam-q/quail-house-installation-04.webp" alt="Device installation in the quail house, view 4." width="754" height="1436" loading="lazy">
+  <figcaption>Device installation in the quail house, view 4.</figcaption>
+</figure>
+<figure class="gallery-item">
+  <img src="../assets/img/satpam-q/quail-house-installation-05.webp" alt="Device installation in the quail house, view 5." width="742" height="1434" loading="lazy">
+  <figcaption>Device installation in the quail house, view 5.</figcaption>
+</figure>
+          </div></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">Outcome</h2>
+          <div class="content-main"><p>The prototype read environmental parameters, displayed real-time data, and drove actuators both automatically and manually. The system was tested directly in a quail house.</p></div>
+        </section>
+        <nav class="project-nav" aria-label="Project navigation">
+          <a href="../projects/dht22-multinode.html"><span class="kicker">← Previous project</span><strong>4-Node Temperature &amp; Humidity Monitoring</strong></a>
+          <a href="../projects/sassy.html"><span class="kicker">Next project →</span><strong>SASSY: Smart Automatic Steaming System</strong></a>
+        </nav>
       </div>
-    </noscript>
+      <section class="project-cta invert">
+        <div class="wrap">
+          <div><h2>Have a similar project?</h2><p>I am available for an internship and open to collaborating on hardware, IoT, and automation work.</p></div>
+          <div><a class="btn btn--large" href="mailto:helloarifdarmawan@gmail.com?subject=Project%20inquiry%3A%20SATPAM-Q%3A%20Quail%20House%20Microclimate%20Control">Email about this project</a></div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer invert">
@@ -85,6 +154,7 @@
 
   <script src="../assets/js/i18n.js" defer></script>
   <script src="../assets/data/projects.js" defer></script>
+  <script src="../assets/data/media.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

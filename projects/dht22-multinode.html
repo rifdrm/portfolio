@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>4-Node Temperature & Humidity Monitoring — Arif Darmawan</title>
+  <title>4-Node Temperature & Humidity Monitoring | Arif Darmawan</title>
   <meta name="description" content="Four DHT22 nodes stream temperature and humidity data to an Arduino Mega for display on an OLED.">
   <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="4-Node Temperature & Humidity Monitoring — Arif Darmawan">
+  <meta property="og:title" content="4-Node Temperature & Humidity Monitoring | Arif Darmawan">
   <meta property="og:description" content="Four DHT22 nodes stream temperature and humidity data to an Arduino Mega for display on an OLED.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -39,7 +39,7 @@
     </button>
     <div class="site-panel" id="site-panel">
       <nav class="site-nav" aria-label="Primary navigation" data-i18n-aria="nav.primary">
-        <a href="../index.html#projects" aria-current="page" data-i18n="nav.projects">Projects</a>
+        <a href="../index.html#projects" aria-current="location" data-i18n="nav.projects">Projects</a>
         <a href="../index.html#about" data-i18n="nav.about">About</a>
         <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
       </nav>
@@ -58,13 +58,69 @@
   </header>
 
   <main id="main">
-    <div id="project-root"></div>
-    <noscript>
-      <div class="wrap" style="padding-block: 64px;">
-        <p class="kicker">JavaScript is required to display this project page.</p>
-        <p><a href="../index.html">Back to home</a></p>
+    <div id="project-root">
+      <section class="project-hero">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span>/</span><a href="../index.html#projects">Projects</a><span>/</span><span>4-Node Temperature &amp; Humidity Monitoring</span>
+          </nav>
+          <p class="kicker">Project 03 / 2025</p>
+          <h1 class="project-title">4-Node Temperature &amp; Humidity Monitoring</h1>
+          <p class="project-summary">Four DHT22 nodes stream temperature and humidity data to an Arduino Mega for display on an OLED.</p>
+          <dl class="project-facts">
+            <div class="fact"><dt>Category</dt><dd>Sensors</dd></div>
+            <div class="fact"><dt>Year</dt><dd>2025</dd></div>
+            <div class="fact"><dt>Role</dt><dd>Developer</dd></div>
+            <div class="fact"><dt>Status</dt><dd><span class="status-chip status-chip--done">Completed</span></dd></div>
+          </dl>
+          <div class="project-cover"><img src="../assets/img/dht22/multinode-monitor-demo-poster.webp" alt="4-Node Temperature &amp; Humidity Monitoring" width="540" height="304" fetchpriority="high"></div>
+        </div>
+      </section>
+      <div class="wrap">
+        <section class="content-section">
+          <h2 class="content-label">Overview</h2>
+          <div class="content-main"><p>This Sensor and Actuator Technology course project explored a simple distributed sensor architecture. Four LGT8F328P nodes read DHT22 sensors and send temperature and humidity data to an Arduino Mega over UART.</p><p>The Arduino Mega parses data from four serial channels, cycles the readings on a 0.91-inch OLED, and triggers a buzzer when values cross a set threshold.</p></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">The build</h2>
+          <div class="content-main"><ul><li>Four LGT8F328P nodes with DHT22 sensors.</li><li>Arduino Mega as the master and data aggregator.</li><li>0.91-inch SSD1306 OLED for cycling display pages.</li><li>UART communication across four serial channels.</li><li>C++ firmware for reading, parsing, and alerting.</li></ul></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">My role</h2>
+          <div class="content-main"><ul><li>Designed both the node and master firmware.</li><li>Mapped UART pins and built a CSV-based data parser.</li><li>Tested reading accuracy and inter-node communication stability.</li></ul></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">Tech stack</h2>
+          <div class="content-main"><div class="stack-list"><span class="tag">Arduino Mega</span><span class="tag">LGT8F328P</span><span class="tag">DHT22</span><span class="tag">OLED SSD1306</span><span class="tag">UART</span><span class="tag">C++</span></div></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">Gallery</h2>
+          <div class="content-main"><div class="gallery-grid gallery-grid--single">
+<figure class="gallery-item">
+  <video controls muted loop playsinline preload="metadata" width="540" height="304" poster="../assets/img/dht22/multinode-monitor-demo-poster.webp">
+    <source src="../assets/img/dht22/multinode-monitor-demo.webm" type="video/webm">
+    <source src="../assets/img/dht22/multinode-monitor-demo.mp4" type="video/mp4">
+  </video>
+  <figcaption>Demonstration of four-node readings and the OLED display.</figcaption>
+</figure>
+          </div></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">Outcome</h2>
+          <div class="content-main"><p>All nodes were read successfully and their data cycled on the OLED. The project provided practical experience with multi-serial communication, data parsing, and microcontroller interface limits.</p></div>
+        </section>
+        <nav class="project-nav" aria-label="Project navigation">
+          <a href="../projects/museum-touch-alarm.html"><span class="kicker">← Previous project</span><strong>Touch-Sensor Museum Security Alarm</strong></a>
+          <a href="../projects/satpam-q.html"><span class="kicker">Next project →</span><strong>SATPAM-Q: Quail House Microclimate Control</strong></a>
+        </nav>
       </div>
-    </noscript>
+      <section class="project-cta invert">
+        <div class="wrap">
+          <div><h2>Have a similar project?</h2><p>I am available for an internship and open to collaborating on hardware, IoT, and automation work.</p></div>
+          <div><a class="btn btn--large" href="mailto:helloarifdarmawan@gmail.com?subject=Project%20inquiry%3A%204-Node%20Temperature%20%26%20Humidity%20Monitoring">Email about this project</a></div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer invert">
@@ -85,6 +141,7 @@
 
   <script src="../assets/js/i18n.js" defer></script>
   <script src="../assets/data/projects.js" defer></script>
+  <script src="../assets/data/media.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

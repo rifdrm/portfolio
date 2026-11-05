@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IR LED-Based Safe Parking System — Arif Darmawan</title>
+  <title>IR LED-Based Safe Parking System | Arif Darmawan</title>
   <meta name="description" content="An infrared parking aid that detects nearby obstacles and warns the driver with a buzzer.">
   <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="IR LED-Based Safe Parking System — Arif Darmawan">
+  <meta property="og:title" content="IR LED-Based Safe Parking System | Arif Darmawan">
   <meta property="og:description" content="An infrared parking aid that detects nearby obstacles and warns the driver with a buzzer.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -39,7 +39,7 @@
     </button>
     <div class="site-panel" id="site-panel">
       <nav class="site-nav" aria-label="Primary navigation" data-i18n-aria="nav.primary">
-        <a href="../index.html#projects" aria-current="page" data-i18n="nav.projects">Projects</a>
+        <a href="../index.html#projects" aria-current="location" data-i18n="nav.projects">Projects</a>
         <a href="../index.html#about" data-i18n="nav.about">About</a>
         <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
       </nav>
@@ -58,13 +58,66 @@
   </header>
 
   <main id="main">
-    <div id="project-root"></div>
-    <noscript>
-      <div class="wrap" style="padding-block: 64px;">
-        <p class="kicker">JavaScript is required to display this project page.</p>
-        <p><a href="../index.html">Back to home</a></p>
+    <div id="project-root">
+      <section class="project-hero">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span>/</span><a href="../index.html#projects">Projects</a><span>/</span><span>IR LED-Based Safe Parking System</span>
+          </nav>
+          <p class="kicker">Project 01 / 2024</p>
+          <h1 class="project-title">IR LED-Based Safe Parking System</h1>
+          <p class="project-summary">A parking aid that uses infrared sensing and a buzzer to warn drivers about obstacles around the vehicle.</p>
+          <dl class="project-facts">
+            <div class="fact"><dt>Category</dt><dd>Electronics</dd></div>
+            <div class="fact"><dt>Year</dt><dd>2024</dd></div>
+            <div class="fact"><dt>Role</dt><dd>Team Lead</dd></div>
+            <div class="fact"><dt>Status</dt><dd><span class="status-chip status-chip--done">Completed</span></dd></div>
+          </dl>
+          <div class="project-cover"><img src="../assets/img/parking/safe-parking-schematic.webp" alt="IR LED-Based Safe Parking System" width="1600" height="1220" fetchpriority="high"></div>
+        </div>
+      </section>
+      <div class="wrap">
+        <section class="content-section">
+          <h2 class="content-label">Overview</h2>
+          <div class="content-main"><p>This Electronics course project started from a practical problem: tight parking spaces and limited driver visibility. The goal was to build a low-cost parking prototype that gives real-time warnings when the vehicle gets close to an obstacle.</p><p>The system emits infrared light from an LED, reads the reflection, and triggers a buzzer when the distance crosses a set threshold. The circuit was designed, simulated, and then realized on a custom PCB with a protective casing.</p></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">The build</h2>
+          <div class="content-main"><ul><li>IR LED and receiver pair as the distance detector.</li><li>Buzzer as the audio indicator when an object gets close.</li><li>Custom schematic and PCB layout.</li><li>Protective casing for the board and sensor.</li><li>Threshold and buzzer response testing.</li></ul></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">My role</h2>
+          <div class="content-main"><ul><li>Led a five-person team and divided the circuit, PCB, casing, and testing work.</li><li>Wrote the proposal, technical documentation, and project schedule.</li></ul></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">Tech stack</h2>
+          <div class="content-main"><div class="stack-list"><span class="tag">IR LED</span><span class="tag">Buzzer</span><span class="tag">PCB Design</span><span class="tag">Circuit Prototyping</span></div></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">Gallery</h2>
+          <div class="content-main"><div class="gallery-grid gallery-grid--single">
+<figure class="gallery-item">
+  <img src="../assets/img/parking/safe-parking-pcb-layout.webp" alt="PCB layout used to realize the circuit." width="1062" height="1416" loading="lazy">
+  <figcaption>PCB layout used to realize the circuit.</figcaption>
+</figure>
+          </div></div>
+        </section>
+        <section class="content-section">
+          <h2 class="content-label">Outcome</h2>
+          <div class="content-main"><p>The prototype successfully detected obstacles and produced an audio warning at a low component cost. It became the foundation for understanding sensors, PCB design, and mechanical-electronic integration.</p></div>
+        </section>
+        <nav class="project-nav" aria-label="Project navigation">
+          <a href="../projects/plc-conveyor.html"><span class="kicker">← Previous project</span><strong>Nut &amp; Cashew Packaging Conveyor System</strong></a>
+          <a href="../projects/museum-touch-alarm.html"><span class="kicker">Next project →</span><strong>Touch-Sensor Museum Security Alarm</strong></a>
+        </nav>
       </div>
-    </noscript>
+      <section class="project-cta invert">
+        <div class="wrap">
+          <div><h2>Have a similar project?</h2><p>I am available for an internship and open to collaborating on hardware, IoT, and automation work.</p></div>
+          <div><a class="btn btn--large" href="mailto:helloarifdarmawan@gmail.com?subject=Project%20inquiry%3A%20IR%20LED-Based%20Safe%20Parking%20System">Email about this project</a></div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer invert">
@@ -85,6 +138,7 @@
 
   <script src="../assets/js/i18n.js" defer></script>
   <script src="../assets/data/projects.js" defer></script>
+  <script src="../assets/data/media.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

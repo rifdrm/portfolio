@@ -41,7 +41,7 @@
   --invert-fg: #ffffff;
   --link: #0000ff;
   --success: #008000;
-  --warning: #ffa500;
+  --warning: #8a4b00;
   --error: #ff0000;
 
   --font-display: "Archivo Black", "Arial Black", Impact, sans-serif;
@@ -72,6 +72,7 @@
   --invert-bg: #000000;
   --invert-fg: #ffffff;
   --link: #9aa7ff;
+  --warning: #ffa500;
 }
 
 *,
@@ -111,6 +112,20 @@ a {
 
 a:hover {
   color: var(--link);
+}
+
+a[href],
+button:not([disabled]),
+select,
+summary,
+label[for],
+[role="button"] {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
 }
 
 ::selection {
@@ -192,6 +207,18 @@ ol {
   color: var(--muted);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ---------- Header ---------- */
 
 .site-header {
@@ -248,7 +275,8 @@ ol {
 }
 
 .site-nav a:hover,
-.site-nav a[aria-current="page"] {
+.site-nav a[aria-current="page"],
+.site-nav a[aria-current="location"] {
   color: var(--invert-fg);
   text-decoration: underline;
   text-decoration-thickness: 3px;
@@ -523,6 +551,26 @@ ol {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.filter-select {
+  display: none;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 3px solid var(--line);
+  background: var(--surface);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.filter-select option {
+  background: var(--surface);
+  color: var(--fg);
 }
 
 .filter-btn {
@@ -1273,6 +1321,128 @@ ol {
   margin-top: var(--sp-4);
 }
 
+/* ---------- Active states ---------- */
+
+.btn:active,
+.control-btn:active,
+.filter-btn:active,
+.to-top:active,
+.lightbox-close:active,
+.gallery-trigger:active,
+.project-card:active,
+.project-nav a:active {
+  transform: translateY(1px);
+}
+
+.site-nav a:active,
+.footer-links a:active,
+.footer-bottom a:active,
+.contact-row dd a:active,
+.breadcrumb a:active,
+.wordmark:active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+/* ---------- Touch targets ---------- */
+
+@media (max-width: 900px), (pointer: coarse) {
+  .control-btn {
+    min-height: 44px;
+    padding: 10px 14px;
+  }
+
+  .control-btn.theme-toggle {
+    flex: 0 0 44px;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+  }
+
+  .site-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .filter-btn {
+    min-height: 44px;
+    padding: 10px 14px;
+  }
+
+  .footer-links a,
+  .footer-bottom a,
+  .contact-row dd a,
+  .wordmark {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .footer-links a {
+    min-width: 44px;
+    justify-content: center;
+  }
+
+  .skip-link {
+    min-height: 44px;
+  }
+}
+
+/* ---------- No JavaScript fallback ---------- */
+
+html:not(.js) .menu-toggle,
+html:not(.js) .filters,
+html:not(.js) .filter-select,
+html:not(.js) .lang-switch,
+html:not(.js) #theme-toggle {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  html:not(.js) .site-header {
+    flex-wrap: wrap;
+    min-height: 0;
+    padding-block: 8px;
+  }
+
+  html:not(.js) .site-panel {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 12px;
+    padding: 8px 0 0;
+    overflow: visible;
+    border-top: 0;
+    background: transparent;
+    color: inherit;
+    transform: none;
+    visibility: visible;
+  }
+
+  html:not(.js) .site-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    gap: 12px 20px;
+  }
+
+  html:not(.js) .site-nav a {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  html:not(.js) .header-actions {
+    width: auto;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1024px) {
@@ -1304,6 +1474,25 @@ ol {
   :root {
     --header-h: 64px;
   }
+
+  .filters {
+    display: none;
+  }
+
+  .filter-select {
+    display: block;
+  }
+
+  .projects-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .project-count {
+    align-self: flex-start;
+  }
+
 
   .menu-toggle {
     display: inline-flex;
@@ -1350,7 +1539,8 @@ ol {
   }
 
   .site-nav a:hover,
-  .site-nav a[aria-current="page"] {
+  .site-nav a[aria-current="page"],
+  .site-nav a[aria-current="location"] {
     text-decoration: underline;
     text-decoration-thickness: 4px;
   }
