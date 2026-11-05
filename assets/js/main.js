@@ -81,8 +81,10 @@
     var themeButton = document.getElementById("theme-toggle");
     if (themeButton) {
       var isDark = root.getAttribute("data-theme") === "dark";
+      var labelKey = isDark ? "theme.switchToLight" : "theme.switchToDark";
       themeButton.setAttribute("aria-pressed", isDark ? "true" : "false");
-      themeButton.textContent = isDark ? t("theme.toLight") : t("theme.toDark");
+      themeButton.setAttribute("aria-label", t(labelKey));
+      themeButton.setAttribute("title", t(labelKey));
     }
 
     document.querySelectorAll("[data-lang-btn]").forEach(function (button) {
