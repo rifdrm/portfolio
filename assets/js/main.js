@@ -444,6 +444,31 @@
     });
   }
 
+
+  function bindWipNotice() {
+    var dialog = document.getElementById("wip-dialog");
+    if (!dialog || body.getAttribute("data-project") !== "sassy") return;
+
+    var close = dialog.querySelector("[data-wip-close]");
+    if (close) {
+      close.addEventListener("click", function () {
+        dialog.close();
+      });
+    }
+
+    dialog.addEventListener("click", function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+
+    window.setTimeout(function () {
+      if (!dialog.open && typeof dialog.showModal === "function") {
+        try {
+          dialog.showModal();
+        } catch (error) {}
+      }
+    }, 0);
+  }
+
   function bindMenu() {
     var toggle = document.querySelector(".menu-toggle");
     var panel = document.getElementById("site-panel");
@@ -589,6 +614,7 @@
     bindToTop();
     renderHome();
     renderProject();
+    bindWipNotice();
   }
 
   if (document.readyState === "loading") {

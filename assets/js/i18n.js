@@ -75,6 +75,9 @@ window.I18N = {
     "project.ctaTitle": "Have a similar project?",
     "project.ctaText": "I am available for an internship and open to collaborating on hardware, IoT, and automation work.",
     "project.ctaButton": "Email about this project",
+    "wip.kicker": "Work in progress",
+    "wip.title": "This project is still in progress",
+    "wip.close": "Close",
     "404.title": "Page not found",
     "404.lead": "The page you are looking for does not exist or has been moved.",
     "404.back": "Back to home"
@@ -155,6 +158,9 @@ window.I18N = {
     "project.ctaTitle": "Punya proyek serupa?",
     "project.ctaText": "Saya tersedia untuk magang dan terbuka untuk berkolaborasi dalam pekerjaan hardware, IoT, dan otomasi.",
     "project.ctaButton": "Kirim email tentang proyek ini",
+    "wip.kicker": "Sedang dikerjakan",
+    "wip.title": "Proyek ini masih dikerjakan",
+    "wip.close": "Tutup",
     "404.title": "Halaman tidak ditemukan",
     "404.lead": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
     "404.back": "Kembali ke beranda"

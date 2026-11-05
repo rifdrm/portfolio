@@ -122,6 +122,18 @@
         </div>
       </section>
     </div>
+
+    <dialog class="wip-dialog" id="wip-dialog" aria-labelledby="wip-title">
+      <div class="wip-dialog__bar">
+        <span class="kicker" data-i18n="wip.kicker">Work in progress</span>
+      </div>
+      <div class="wip-dialog__body">
+        <h2 id="wip-title" data-i18n="wip.title">This project is still in progress</h2>
+      </div>
+      <div class="wip-dialog__actions">
+        <button class="btn" type="button" data-wip-close autofocus data-i18n="wip.close">Close</button>
+      </div>
+    </dialog>
   </main>
 
   <footer class="site-footer invert">
